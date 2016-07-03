@@ -22,22 +22,32 @@ Or install it yourself as:
 
 ## Usage
 
+All methods working with both uuid and provision path
+
+Reading provision content into ruby Hash
+
     requare 'provision_util'
     
     uuid = 'your provision profile uuid'
+    custom_path = "provisions/some_uuid.mobileprovision"
     
     # Hash of provision plist
-    content = ProvisionUtil::get_provision_content_plist(uuid)
+    content = get_provision_content_plist(uuid)
+    
+    content = get_provision_content_plist(custom_path)
     puts content['AppIDName']
     
-    # OpenSSL::X509::Certificate which was used to sign provision
+Get public key of certificate from provision profile. It's used to sign apps
+
+    # OpenSSL::X509::Certificate 
     cert = get_cert_from_provision(uuid)
     puts cert.subject
     
     path_p12 = "cert.p12"
     password_p12 = "secure123"
     
-    # compare provision public key  with public key from local p12 file
+Compare provision public key with public key from local p12 file
+
     is_valid = check_public_key(uuid, path_p12, password_p12)
 
 ## License
