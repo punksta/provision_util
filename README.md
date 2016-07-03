@@ -1,9 +1,11 @@
-# ProvisionUtil
+# ProvisionUtil 
+
 [![fastlane Plugin Badge]
-(https://rawcdn.githack.com/fastlane/fastlane/master/fastlane/assets/plugin-badge.svg)]
+(https://img.shields.io/gem/v/provision_util.svg?style=flat)]
 (https://rubygems.org/gems/provision_util)
 
-Little library to make validation of provision profile easier 
+
+Little library to working with provision profiles and certificates easier 
 
 ## Installation
 
